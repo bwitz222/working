@@ -1,56 +1,21 @@
 ---
 name: adobe-acrobat-pro
 description: >
-  Full-featured PDF suite replicating Adobe Acrobat Pro, including a LIVE
-  BROWSER-BASED PDF EDITOR (highlight, text, shapes, freehand draw, erase,
-  multi-page, zoom, download with annotations baked in — launch it with
-  show_widget using assets/live-editor.html). Also covers: PDF creation,
+  Full-featured PDF suite replicating Adobe Acrobat Pro. THE single entry point for
+  any PDF work — reading, extracting text and tables, OCR, and creation included.
+  Covers: PDF creation,
   merge/split/rotate/reorder pages, text and image overlays, annotations,
   redaction, digital signatures, password protection, OCR on scanned documents,
   PDF comparison (visual diff), compression/optimization, format conversion
   (PDF to Word, Excel, images; HTML to PDF), Bates numbering, bookmarks/TOC,
-  headers/footers, PDF/A compliance, and batch processing. Trigger on ANY of:
-  editing a PDF live, annotating, redacting, signing, compressing, comparing,
-  converting to/from PDF, stamping, page numbers, bookmarks, or accessibility.
-  Always prefer over the basic pdf or pdf-reading skills for modification,
-  annotation, conversion, or any interactive PDF editing request.
+  headers/footers, PDF/A compliance, and batch processing. Trigger on ANY mention of
+  a .pdf file or a request to produce one, and on ANY of: reading or extracting
+  text/tables, annotating, redacting, signing, compressing, comparing, merging,
+  splitting, rotating, filling forms, OCR, converting to/from PDF, stamping, page
+  numbers, bookmarks, or accessibility.
 ---
 
 # Adobe Acrobat Pro — PDF Skill
-
-## Live Browser Editor
-
-When the user wants to **visually edit a PDF right now** (annotate, highlight,
-draw, add text, then download), launch the live editor using `show_widget`.
-
-**Triggers:** "open the PDF editor", "edit this PDF live", "annotate my PDF",
-"I want to highlight things", "launch the editor", or any request for an
-interactive/visual editing experience.
-
-**How to launch:**
-
-1. Read `assets/live-editor.html` from this skill's directory.
-2. Pass the full file contents as `widget_code` to `show_widget`.
-3. Use loading messages like: `["Loading PDF engine…", "Wiring up tools…", "Prepping the canvas…"]`
-4. Set `title` to `pdf_live_editor`.
-
-The editor is fully self-contained (loads PDF.js + pdf-lib from CDN). The user
-drops or uploads a PDF, annotates it with the toolbar, then clicks the download
-button to save the annotated PDF back to their computer.
-
-**Editor capabilities:**
-- Highlight (drag to paint semi-transparent color over any region)
-- Text (click to place typed label anywhere on the page)
-- Rectangle (drag to draw a border box)
-- Freehand draw (pencil strokes)
-- Erase (click any annotation to remove it)
-- 5 color swatches: yellow, red, blue, green, black
-- Undo
-- Multi-page navigation
-- Zoom in/out
-- Download — annotations are coordinate-mapped and baked permanently into the PDF
-
----
 
 ## Primary Library: PyMuPDF
 
@@ -72,7 +37,6 @@ pip install pdf2image pytesseract --break-system-packages  # OCR pipeline
 
 | Task | Reference | Key Library |
 |------|-----------|-------------|
-| **Live in-browser PDF editor** | [Live Editor](#live-browser-editor) — read `assets/live-editor.html` and call `show_widget` | PDF.js + pdf-lib |
 | Merge, split, rotate, reorder pages | [Core ops](#core-operations) | PyMuPDF |
 | Add text / image overlays | [Core ops](#core-operations) | PyMuPDF |
 | Highlights, comments, sticky notes, shapes | [annotations.md](references/annotations.md) | PyMuPDF |

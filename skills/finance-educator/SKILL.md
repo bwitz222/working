@@ -64,32 +64,21 @@ WRAP-UP           [5 min]    Three takeaways + forward bridge to next session
 
 ### Aesthetic Direction — Purdue Palette, Simplistic
 
-All decks use the Purdue University brand color system. The aesthetic is minimal and data-forward: no gradients, no decorative elements, no competing colors. Every design decision serves clarity.
+**Palette and typography come from `purdue-smif-brand-guidelines`, which is the single authority.**
+Do not define a second Purdue gold or a second font stack here — that is how a deck built through
+this skill ends up a different colour from a deck built through that one. Load it for the hex values,
+the WCAG-verified contrast pairs, and the Calibri hierarchy.
 
-**Color system — fixed (contrast-verified against WCAG 2.1 AA):**
+The aesthetic is minimal and data-forward: no gradients, no decorative elements, no competing
+colours. Every design decision serves clarity.
 
-| Role | Color | Hex | Safe on | Contrast | Use |
-|---|---|---|---|---|---|
-| Background (dark) | Black | `#000000` | — | — | Preferred for projected delivery |
-| Background (light) | White | `#FFFFFF` | — | — | Handout / print version |
-| Purdue Old Gold | `#CFB991` | Black bg | 11.0:1 ✅ | Titles, callouts, key data, chart highlights — **dark slides only** |
-| Aged Gold | `#8E6F3E` | White bg | 4.7:1 ✅ | Subheadings, secondary data on light slides; large text (24pt+) only on dark |
-| Body text (on dark) | White | `#FFFFFF` | Black bg | 21.0:1 ✅ | All body text on dark slides |
-| Body text (on light) | Black | `#000000` | White bg | 21.0:1 ✅ | All body text on light slides |
-| Captions / labels | Railway Gray | `#555960` | White bg | 7.0:1 ✅ | Axis labels, source citations — white slides only |
-
-**Critical constraints:**
-- Purdue Gold (`#CFB991`) **cannot be used as text on white** — contrast 1.9:1 (fails). Use it only on black backgrounds or as a graphic/chart element color.
-- Aged Gold (`#8E6F3E`) on black is borderline (4.49:1) — restrict to titles 24pt+ only, never body text.
-- Railway Gray (`#555960`) on black — contrast 3.0:1 — fails body text; don't use as text on dark slides.
-
-**Default layout:** Dark background (`#000000`) for projected slides. White background version generated alongside it for the student handout. Never mix backgrounds within the same deck.
-
-**Typography — two fonts, fixed:**
-- **Titles:** Montserrat Bold — Purdue's brand typeface, clean, strong at display size. If unavailable: IBM Plex Sans Bold.
-- **Body / labels:** Source Sans Pro Regular — legible at small sizes, pairs cleanly with Montserrat. If unavailable: DM Sans.
-- Title size: 36–44pt. Body: 20–24pt. Captions/labels: 16–18pt (18pt floor for projected slides).
-- Titles left-aligned. Never centered. Body left-aligned or split-layout.
+**Lecture-specific overrides** (these are the only places teaching decks depart from the brand file):
+- **Projected delivery runs on a Black background**, with a White-background version generated
+  alongside it for the student handout. Never mix backgrounds within one deck. Note that the brand
+  file's "chart area background: never dark" rule is written for reports — on a projected lecture
+  slide the chart sits on Black, and the safe series pairs below apply instead.
+- **Sizes for a projected room:** title 36–44pt, body 20–24pt, captions/labels 16–18pt, with an
+  18pt floor. Titles left-aligned, never centred. Body left-aligned or split-layout.
 
 **Layout principles:**
 - Left-anchor all text. Charts and visuals sit right or fill the lower half.
@@ -131,10 +120,10 @@ These are not optional — a stand-alone deck that students can't read or naviga
 
 **Color independence:** Never use color as the only way to convey information. In charts, add direct labels, dashed vs. solid line styles, or distinct marker shapes alongside color. A student who is red-green colorblind must read your chart without confusion.
 
-**Safe chart data series pairs within the Purdue palette:**
-- On dark slides: Purdue Gold (`#CFB991`) and White (`#FFFFFF`) — 11.0:1 and 21.0:1 respectively
-- On light slides: Aged Gold (`#8E6F3E`) and Black (`#000000`) — 4.7:1 and 21.0:1 respectively
-- For three-series charts: add Railway Gray (`#555960`) on white only (7.0:1)
+**Safe chart data series pairs** (names refer to `purdue-smif-brand-guidelines`; take the hex values from there):
+- On dark slides: Purdue Gold and White
+- On light slides: a darker gold and Black
+- For three-series charts: add Purdue Gray, on light slides only
 - Never use red vs. green as the sole differentiator; add labels or line styles alongside color
 
 **Alt text:** Every chart, image, and diagram in the .pptx gets alt text. The pptx skill adds this — specify the description when prompting. Format: "[chart type] showing [what it shows], [key finding]." Example: "Line chart showing TLT ETF price from Jan 2021 to Dec 2022, falling 31% as 10Y yields rose from 1.5% to 4.2%."
@@ -192,7 +181,7 @@ slide itself.
 
 | Deliverable | Route |
 |---|---|
-| Slide deck | `pptx`, with this skill's slide-design rules and the academic typography carve-out in `purdue-smif-brand-guidelines` |
+| Slide deck | `pptx`, with this skill's slide-design rules and the lecture-specific overrides above |
 | Handout, problem set, case | `docx` |
 | Reading memo or one-pager | markdown |
 | Any spreadsheet exercise | `xlsx` |
@@ -218,5 +207,4 @@ colleagues do, and slop in a lecture gets copied into their work.
 Register for teaching material is naturalness dial 3. The gate runs the pattern scan and skips
 the soul check on any slide carrying financial data, which stays neutral.
 
-The academic typography carve-out in `purdue-smif-brand-guidelines` still governs visual design.
-The editorial gate governs the words.
+`purdue-smif-brand-guidelines` still governs visual design. The editorial gate governs the words.

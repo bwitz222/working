@@ -99,12 +99,8 @@ to the caller. Never reprint the dirty draft. Never take over the caller's task.
 turn with a question: the caller is a skill, so an ambiguity is named in the change line and the
 text left as written.
 
-## Legacy names and sync
+## Sync
 
-`stop-slop`, `humanizer`, a red-pen pass, a 24-pattern scan, "five passes," "19 patterns" all
-resolve to GATE v1 as defined in `references/deslop-rules.md`. Those counts are stale. Do not
-report a retired skill as missing.
-
-The three `deslop-*.md` files are byte-identical copies of the ones in `write`: one contract in
-two packages, not two contracts. Edit in one place, reinstall both. `verify.py` compares SHA-256
-across the installs and fails on drift.
+Any caller naming a different number of rules, patterns, or passes is stale; `references/deslop-rules.md`
+wins. The three `deslop-*.md` files are byte-identical copies of the ones in `write`: one contract in
+two packages, not two contracts. Edit in one place, reinstall both.

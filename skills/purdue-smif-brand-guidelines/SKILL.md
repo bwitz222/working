@@ -1,11 +1,19 @@
 ---
 name: purdue-smif-brand-guidelines
-description: Apply Purdue Student Managed Investment Fund (SMIF) brand guidelines — colors, typography, logo usage, imagery, voice. Use whenever creating any .docx, .pptx, .xlsx, or .html file, regardless of topic or whether SMIF is named. Also for any chart, infographic, PDF, email, or visual asset for SMIF.
+description: Apply Purdue Student Managed Investment Fund (SMIF) brand guidelines — colors, typography, logo usage, imagery, voice. Use when creating any SMIF deliverable (.docx, .pptx, .xlsx, .html) or any chart, infographic, PDF, email, or visual asset for SMIF. This is the single authority on the Purdue palette and typography — any other skill naming a Purdue hex or font defers to this file. Does NOT apply to résumés, cover letters, job applications, or work for another organization.
 ---
 
 # Purdue SMIF Brand Guidelines
 
-**Standing rule.** Apply to ALL .docx, .pptx, .xlsx, and .html files regardless of topic, audience, or intent — final deliverables, drafts, and test versions alike. Apply to PDFs, charts, infographics, and emails for SMIF. Honor opt-outs only when explicit ("no SMIF branding," "unbranded").
+**Standing rule.** Apply to every SMIF deliverable in .docx, .pptx, .xlsx, or .html — final
+versions, drafts, and test versions alike — and to PDFs, charts, infographics, and emails for SMIF.
+
+**Scope.** SMIF work means: fund, portfolio, or committee materials; equity and fixed-income
+research; class and semester deliverables; anything carrying the fund's name. It does not mean
+every file that happens to be a .docx. A résumé, a cover letter, a job application, a personal
+document, or work for another organization is **not** SMIF work and takes no SMIF branding — those
+route to `resume-optimizer`, `cover-letter-pro`, or plain `docx`. When genuinely unclear, ask once.
+Honor opt-outs whenever explicit ("no SMIF branding," "unbranded").
 
 ---
 
@@ -119,19 +127,10 @@ Analytical, not promotional. Confident in method, measured about outcomes. Acade
 
 ## Logo
 
-Files live in `assets/logos/`. **Logo files are provided by the user — do not fabricate filenames.** Prefer SVG; fall back to PNG only when the renderer cannot handle SVG. If no file is available, insert a bracketed placeholder: `[SMIF LOGO]`.
-
-### Routing
-
-| File | When |
-|---|---|
-| `smif-logo-primary` | Default — light backgrounds, top-left of slides and letterheads |
-| `smif-logo-on-dark` | Reversed (white/gold) — Black backgrounds and dark panels |
-| `smif-logo-mono-black` | B&W printing only |
-| `smif-wordmark-only` | When the Purdue Block P cannot be reproduced |
-| `smif-mark-only` | Compact mark — tight placements under 1.5 in wide |
-
-**Quick rule:** light bg → `-primary`. Dark/Black → `-on-dark`. Under 1.5 in → `-mark-only`.
+**No logo files ship with this skill.** Insert the bracketed placeholder `[SMIF LOGO]` and note the
+gap. If the user supplies files, prefer SVG, fall back to PNG only when the renderer cannot handle
+SVG, and never fabricate a filename. Light background → the primary lockup. Dark or Black → the
+reversed lockup. Under 1.5 in → the compact mark.
 
 ### Hard Rules
 
@@ -141,54 +140,12 @@ Files live in `assets/logos/`. **Logo files are provided by the user — do not 
 - Minimum width for full logo: 1.5 in. Below that, use `-mark-only`.
 - Clear space: ≥ 0.125 in on all sides.
 
-### Aspect Ratios
+### Sizing
 
-**Set width only. Never set both width and height — the logo will compress.**
-
-| File family | Approx. ratio (w:h) | Notes |
-|---|---|---|
-| `logo-primary` / `logo-mono-*` | ~5.5 : 1 | Update once actual files are measured |
-| `logo-on-dark` | ~5.5 : 1 | Update once actual files are measured |
-| `mark-only` (Block P) | ~1 : 1.1 | Verify against actual file |
-
-```js
-// pptxgenjs — update LOGO_PRIMARY_AR once files are measured
-const LOGO_PRIMARY_AR = 5.5;
-const logoH = (w, ar) => w / ar;
-slide.addImage({ path: LOGO_PRIMARY, x, y, w: 2.0, h: logoH(2.0, LOGO_PRIMARY_AR) });
-```
-
-### Typical Placements
-
-| Location | File | Width |
-|---|---|---|
-| Report cover, Black panel | `logo-on-dark` | 3.0–3.5 in |
-| Closing slide, bottom-right | `logo-on-dark` | 2.0–2.5 in |
-| Content slide, bottom-left (standard) | `logo-primary` | **1.10 in** |
-| Page footer compact | `mark-only` | 0.4 in |
-| HTML dashboard, top-left | `logo-primary` | 140–180 px (width only) |
-
-### HTML Logo Implementation
-
-Deployed (with asset pipeline):
-```html
-<img src="/assets/logos/smif-logo-primary.svg"
-     alt="Purdue Student Managed Investment Fund"
-     style="width: 160px; height: auto; display: block;">
-```
-
-Standalone HTML (single-file artifacts):
-```html
-<span class="logo" role="img" aria-label="Purdue Student Managed Investment Fund">
-  <!-- Paste smif-logo-primary.svg contents here. Remove source width="100%". -->
-</span>
-```
-```css
-.logo { display: block; width: 160px; }
-.logo svg { width: 100%; height: auto; display: block; }
-```
-
-Tailwind: `w-40 h-auto`. Never `w-40 h-12`.
+**Set width only. Never set both width and height — the logo will compress.** In pptxgenjs derive
+height from the measured aspect ratio; in HTML use `height: auto`; in Tailwind `w-40 h-auto`, never
+`w-40 h-12`. Standard widths: 3.0–3.5 in on a cover, 2.0–2.5 in on a closing slide, 1.10 in
+bottom-left on a content slide, 140–180 px top-left in an HTML dashboard.
 
 ---
 
@@ -230,28 +187,14 @@ Line-icon style, ~2px stroke, sharp edges with rounded accents, default color Pu
 
 ---
 
-## Templates
-
-Start from `assets/templates/`. Do not build from scratch when a template exists.
-
-| File | Use for |
-|---|---|
-| `SMIF-Standard-Deck.potx` | Investment pitches, committee reviews, class presentations |
-| `SMIF-Semester-Report-Template.pptx` | Semester performance reports |
-| `SMIF-Annual-Report-Template.pptx` | Annual portfolio review |
-| `SMIF-Memo-Template.docx` | IC memos, research briefs, internal communications |
+## Deck and document setup
 
 **Slide size: 13.33 × 7.5 in (16:9).** Never default to 4:3 unless the venue explicitly requires it.
 
-### PowerPoint Workflow
-
-Use **python-pptx** when starting from a template (inherits slide master). Use pptxgenjs only for fully custom designs, and reproduce chrome manually.
-
-```python
-from pptx import Presentation
-prs = Presentation('assets/templates/SMIF-Semester-Report-Template.pptx')
-# Duplicate an existing slide; replace text and data.
-```
+No template or logo files ship with this skill. Build from the chrome spec below using `pptxgenjs`
+(decks) or `docx` (memos), with `[SMIF LOGO]` as the placeholder. If the user supplies a template,
+switch to python-pptx so the deck inherits the slide master, and reproduce nothing by hand that the
+master already carries.
 
 ### Standard Slide Chrome
 

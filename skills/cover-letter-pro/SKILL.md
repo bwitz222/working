@@ -134,29 +134,19 @@ One or two lines. Direct. Acceptable closes include: "My resume is attached — 
 
 ---
 
-## Step 5: De-slop pass, quick tier
+## Step 5: GATE v1
 
-Re-read with this lens. Kill every:
-- **Significance inflation**: "passionate about," "excited to," "deeply committed to," "thrilled," "love to"
-- **Filler openers**: "I am writing to," "I wanted to reach out," "Please accept this letter"
-- **Generic claims without evidence**: "strong analytical skills," "team player," "detail-oriented," "fast learner"
-- **AI sentence structure**: parallel triplets, "Not only X, but also Y and Z," em dash drama
-- **Sentences that could appear verbatim in someone else's letter**
+Dispatch `gate` at deep tier — a cover letter is short but it is the highest-stakes prose Ian
+sends, and deep tier is where the AI-cover-letter register gets caught. `gate` owns the rules and
+the pattern catalog; do not restate them here.
 
-Every cut must be replaced with something specific or removed entirely. Do not leave syntactically broken or choppy sentences from cuts — fix the surrounding prose.
+Two carve-outs to pass to `gate`:
 
-**Exception**: Minimal direct closes ("Happy to discuss further," "My resume is attached") are not filler. Do not flag them.
-
----
-
-## Step 6: De-slop pass, deep tier
-
-Read the gated draft again. Flag and rewrite:
-- **AI vocabulary**: "leverage," "utilize," "spearhead," "drive impact," "synergize," "seamlessly," "robust," "holistic," "cutting-edge," "forward-thinking"
-- **Overly formal constructions** no one uses in conversation
-- **Rhythmic over-parallelism**
-- **Safe hedged phrasing**: "I believe I would be a strong fit," "I feel I could contribute," "I hope to"
-- **Anything that sounds like it was written to sound like a cover letter**
+- **Minimal direct closes are not filler.** "Happy to discuss further," "My resume is attached" —
+  do not flag them. ("I look forward to hearing from you at your earliest convenience" is filler.
+  Know the difference.)
+- **Every cut must be replaced with something specific or removed entirely.** Do not leave
+  syntactically broken or choppy sentences behind — fix the surrounding prose.
 
 ---
 

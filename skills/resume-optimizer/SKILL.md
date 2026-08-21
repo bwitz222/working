@@ -191,26 +191,16 @@ For every experience bullet:
 
 ### 3.3 De-slop pass (Mandatory)
 
-After completing the rewrite of each section, apply the 7 de-slop rules from `write`:
-- Kill filler and adverbs
-- Collapse binary contrasts
-- Name the actor (passive voice)
-- Specific over vague
-- Break rhythm (vary sentence length in summary/profile)
-- Trust the reader — no hand-holding, no justification prose
+Dispatch `gate` on each rewritten section — quick tier for bullets, deep tier for prose sections
+(summary, profile, cover letter). `gate` owns the rule list, the pattern catalog, and the score;
+do not restate them here, because a copy in this file drifts from the contract.
 
-Score each section: Directness / Rhythm / Trust / Authenticity / Density (1–10 each). If any section scores below 35/50, revise before moving on.
+Resume-specific carve-out to pass to `gate`: **experience bullets are exempt from the full pattern
+scan**, but still check them for AI vocabulary (showcase, leverage, spearhead, delve, foster,
+garner), significance inflation (pivotal, transformative, game-changing), forced rule-of-three, and
+filler ("In order to", "responsible for"). Flag and fix every instance found.
 
-### 3.4 Deep de-slop pass (Mandatory)
-
-After the quick tier, run the GATE v1 deep tier (24-pattern catalog) from `write` on all prose sections (summary, profile, cover letter if applicable). Experience bullets are exempt from the full pattern scan but still check for:
-- Pattern 7 (AI vocabulary: showcase, leverage, spearhead, delve, foster, garner)
-- Pattern 1 (significance inflation: pivotal, transformative, game-changing)
-- Pattern 10 (forced rule of three in bullets)
-- Pattern 22 (filler: "In order to", "responsible for")
-- Pattern 24 (generic conclusions in summary endings)
-
-Flag and fix every instance found.
+If any section scores below 35/50 on the gate's returned score, revise before moving on.
 
 ### 3.5 Keyword Integration Check
 

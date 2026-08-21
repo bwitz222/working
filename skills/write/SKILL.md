@@ -136,12 +136,8 @@ Gate tier and effort tier are different axes: a 150-word client blurb is Light e
 DRAFT, CRITIQUE, CLEAN, and COMPRESS all end by running this contract. COACH does not, because
 gating someone else's draft hands them the fixed prose the mode exists to withhold.
 
-GATE mode is the contract on its own, dispatched by another skill with nothing else attached, and
-it now ships separately as the `gate` skill so a caller does not load this router to clean one
-deliverable. A skill wanting only a gate should call `gate`. GATE mode stays here as the fallback
-for when `gate` is not installed, and the two run the identical contract: `deslop-rules.md`,
-`deslop-patterns.md`, and `deslop-lists.md` are byte-identical across both packages. Edit them in
-one place and reinstall both. A person asking to clean, polish, or humanize their own text is
+A skill wanting only a gate should call `gate`, which runs the identical contract from
+byte-identical reference files. A person asking to clean, polish, or humanize their own text is
 CLEAN in this skill, never `gate`.
 
 **The artifact rule.** Prose gated before a file build is not a gated file. Headers, table
@@ -263,18 +259,7 @@ One level deep. Load only what the mode calls for; the Load column above is the 
 | `domain-notes.md` | Academic, teaching, persuasive failure modes |
 | `evals.md` | Acceptance and adversarial scenarios. Never loaded in normal operation |
 
-## Legacy names
+## Pass counts
 
-This skill replaced three earlier ones. When a request, a habit, or another skill names one,
-resolve it here and say so in one clause. Do not report the old skill as missing.
-
-| Named | Resolves to |
-|---|---|
-| `stop-slop`, a stop-slop pass | CLEAN, or GATE when a skill asked for a gate on its own deliverable |
-| `humanizer`, a 24-pattern scan | GATE, deep tier, or the `gate` skill when a skill dispatched it |
-| `co-writer-pro` | DRAFT |
-| `red-pen-editor`, a red-pen pass | CRITIQUE with a draft plus a judgment word; COACH when the author is a student or junior colleague; GATE otherwise |
-| `essay-architect`, `doc-architect` | DRAFT. Both folded in; nothing lost |
-
-The shim skills no longer exist. Callers sometimes ask for "five passes" or "19 patterns"; those
-counts are stale. GATE v1 as defined in `deslop-rules.md` is the only shape a de-slop pass has.
+Callers sometimes ask for "five passes" or "19 patterns"; those counts are stale. GATE v1 as
+defined in `deslop-rules.md` is the only shape a de-slop pass has.

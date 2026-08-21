@@ -104,4 +104,3 @@ Tier hierarchy and the connector routing table: `references/vendor-map.md`.
    guarantee language, balanced risk language present where a recommendation appears, and past-performance
    framing that does not imply future results. Flag anything reading as personalized advice for human review
    before it goes out.
-5. On any failure or friction while using this skill, log it via `skill-improver`.

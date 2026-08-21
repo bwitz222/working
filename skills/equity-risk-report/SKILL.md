@@ -258,22 +258,7 @@ After closing `</scratchpad>`, output raw HTML only.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{TICKER}} Risk Report</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            gray: {
-              950: '#030712'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+  <style>/* All CSS inline. No external stylesheet, no CDN — see Guardrail 3. */</style>
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen font-sans antialiased">
   <main class="max-w-6xl mx-auto px-4 py-10 space-y-16">
@@ -284,8 +269,11 @@ After closing `</scratchpad>`, output raw HTML only.
 </html>
 ```
 
-All inline `<script>` blocks that reference Chart.js must be wrapped in
-`window.addEventListener('DOMContentLoaded', function() { ... })`.
+**No external requests of any kind.** The Tailwind Play CDN and jsDelivr were previously specified
+here; both are blocked by the artifact CSP and by restricted networks, and the Play CDN is not
+production-grade in any case. Write the CSS inline — the class names used throughout this spec are
+a naming convention for that stylesheet, not a Tailwind dependency. The report must render fully
+with the network off.
 
 ---
 
@@ -346,43 +334,27 @@ Each card:
 </div>
 ```
 
-Chart.js configuration (inside `DOMContentLoaded`):
-```javascript
-// MOCK DATA — illustrative only, not real historical prices
-// Generated to approximate the 52-week range from SEC/Yahoo Finance data
-const mockLabels = [/* 12 month labels, oldest to most recent */];
-const mockPrices = [/* 12 values interpolated between 52W low and high with mild noise */];
+**Never synthesise the price series.** An interpolated or noise-generated line is a fabricated
+figure wearing a chart's clothes, and it is barred by this skill's own no-fabrication rule, by
+`equity-research-foundation` Phase 0, and by `smif-initiation-pipeline` Compliance 3. It also has
+no valid `decision-provenance` tag, because there is no source to name.
 
-const ctx = document.getElementById('priceChart').getContext('2d');
-const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-gradient.addColorStop(0, 'rgba(34, 197, 94, 0.2)');
-gradient.addColorStop(1, 'rgba(34, 197, 94, 0)');
+Add a Step 1b to Phase 1: pull 12 real monthly closes (SEC EDGAR, Yahoo Finance, or Macrotrends —
+same priority order as Step 1) and record each with its date and source. Then draw them as an
+inline `<svg>` polyline sized to the data — no charting library, no CDN, no build step:
 
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: mockLabels,
-    datasets: [{
-      data: mockPrices,
-      borderColor: '#22c55e',
-      backgroundColor: gradient,
-      borderWidth: 2,
-      tension: 0.4,
-      pointRadius: 0,
-      fill: true
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: {
-      x: { grid: { color: '#1f2937' }, ticks: { color: '#6b7280' } },
-      y: { grid: { display: false }, ticks: { color: '#6b7280' } }
-    }
-  }
-});
+```html
+<!-- 12 monthly closes, {{FIRST_DATE}} – {{LAST_DATE}}, source: {{SOURCE}} -->
+<svg viewBox="0 0 600 200" class="w-full h-52" role="img"
+     aria-label="12-month closing price, {{LOW}} to {{HIGH}}">
+  <polyline fill="none" stroke="#22c55e" stroke-width="2"
+            points="{{X,Y PAIRS SCALED FROM THE REAL CLOSES}}"/>
+</svg>
+<p class="text-xs text-gray-500 mt-2">Monthly closes · {{SOURCE}} · as of {{DATE}}</p>
 ```
+
+If 12 real closes cannot be sourced, **omit the chart** and render the 52-week range bar alone.
+A missing chart is a correct report; an invented one is not.
 
 ---
 
@@ -566,10 +538,10 @@ These rules apply to all output without exception:
    "recommend," or "invest" anywhere in the HTML.
 2. **Data discipline:** Every number rendered in the HTML must originate from the
    scratchpad. Do not introduce new values in Phase 2.
-3. **Single file:** No external stylesheets. No external JS files beyond the two specified
-   CDN scripts (Tailwind, Chart.js 4.4.3).
-4. **Mock data labeling:** The price chart data array must be preceded by:
-   `// MOCK DATA — illustrative only, not real historical prices`
+3. **Single file, zero network:** No external stylesheets, scripts, fonts, or images. No CDN.
+   Everything inline. The report must render fully offline.
+4. **No fabricated figures, anywhere, including charts:** every plotted point is a sourced,
+   dated observation. If it cannot be sourced, the chart is omitted, not synthesised.
 5. **Clean output:** After `</scratchpad>`, output raw HTML only. No code fences,
    no preamble, no trailing commentary.
 6. **Phase gate:** Do not begin writing HTML until all six scratchpad steps are complete

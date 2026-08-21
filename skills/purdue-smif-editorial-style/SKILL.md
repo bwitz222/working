@@ -1,11 +1,13 @@
 ---
 name: purdue-smif-editorial-style
-description: Apply Purdue Student Managed Investment Fund (SMIF) editorial style — capitalization, number formatting, financial metrics, abbreviations, hyphenation, period terminology, and voice — to all copy in downloadable deliverables. Use whenever generating or editing any .docx, .pptx, .xlsx, .html, .pdf, .md, or other file the user can download or save, regardless of topic or whether SMIF is named. Triggers include investment memos, pitch decks, portfolio commentary, semester and annual reports, committee materials, research briefs, dashboards, and internal communications. Sister skill to purdue-smif-brand-guidelines (which covers visual brand). Honor opt-outs only when the user is explicit ("ignore style guide," "unedited," "raw text").
+description: Apply Purdue Student Managed Investment Fund (SMIF) editorial style — capitalization, number formatting, financial metrics, abbreviations, hyphenation, period terminology, and voice — to copy in any SMIF deliverable the user can download or save (.docx, .pptx, .xlsx, .html, .pdf, .md). Triggers include investment memos, pitch decks, portfolio commentary, semester and annual reports, committee materials, research briefs, dashboards, and internal SMIF communications. Does NOT apply to résumés, cover letters, job applications, personal documents, or work for another organization. Sister skill to purdue-smif-brand-guidelines (which covers visual brand). Honor opt-outs whenever the user is explicit ("ignore style guide," "unedited," "raw text").
 ---
 
 # Purdue SMIF Editorial Style
 
-**Standing rule.** Apply to all copy in any downloadable deliverable (.docx, .pptx, .xlsx, .html, .pdf, .md, and similar), regardless of topic or whether SMIF is named. Sister skill to `purdue-smif-brand-guidelines`, which handles visuals. This skill governs wording, grammar, and formatting of numbers, metrics, and financial terminology.
+**Standing rule.** Apply to all copy in any SMIF deliverable the user can download or save (.docx, .pptx, .xlsx, .html, .pdf, .md, and similar). Sister skill to `purdue-smif-brand-guidelines`, which handles visuals and owns the same scope test. This skill governs wording, grammar, and formatting of numbers, metrics, and financial terminology.
+
+**Scope.** SMIF work means fund, portfolio, committee, research, or class deliverables. A résumé, a cover letter, a job application, a personal document, or work for another organization is not SMIF work and takes none of these rules — in particular, the Million/Billion and `×` conventions below actively hurt a résumé, where "$2B portfolio" is what a recruiter and an ATS parser expect.
 
 **[Formal] tag.** Rules marked [Formal] apply to external/institutional deliverables (Annual Report, externally distributed Semester Report, presentations to faculty or institutional audiences). Base rules apply everywhere else. When in doubt, apply base rules.
 
@@ -33,9 +35,12 @@ description: Apply Purdue Student Managed Investment Fund (SMIF) editorial style
 
 Run both passes before finalizing any body-copy deliverable. Neither pass applies to financial data tables, legal disclosures, or verbatim quoted material.
 
-### Quick tier (GATE v1, from `write`)
+### Quick tier
 
-Run the five passes in order: banned phrases → structural patterns → false agency → rhythm traps → soul check.
+Dispatch `gate` (quick tier). It owns the contract — rules, checklist, and tiers — and its
+`references/deslop-rules.md` is the only authority on what a pass contains. Do not restate the
+count here; a number written into this file is how it goes stale. What follows is the SMIF-specific
+extension to that contract, not a replacement for it.
 
 **Finance-specific banned phrases for SMIF copy** (extend the de-slop phrase list in `write`):
 
@@ -60,9 +65,9 @@ Run the five passes in order: banned phrases → structural patterns → false a
 - Rule of three for its own sake: if three items don't each add value, cut to two or one.
 - Em dash overuse: maximum one em dash per paragraph. Use commas or periods instead.
 
-### Deep tier (GATE v1, 24-pattern catalog, from `write`)
+### Deep tier
 
-Check the 24 patterns. Key ones for financial writing:
+Dispatch `gate` (deep tier). Key patterns as they show up in financial writing:
 
 | Pattern | SMIF manifestation | Fix |
 |---|---|---|
@@ -75,7 +80,7 @@ Check the 24 patterns. Key ones for financial writing:
 
 **Register rule:** financial data, legal disclosures, compliance language, and verbatim quoted material are exempt from both passes. Preserve their wording exactly.
 
-**Soul check:** after removing patterns, verify the text reacts to data rather than just reporting it. Vary sentence length. If every sentence is the same length, the writing is still AI-sounding even if technically clean.
+**Soul check:** verify the text reacts to data rather than just reporting it. Vary sentence length. If every sentence is the same length, the writing is still AI-sounding even if technically clean.
 
 ---
 

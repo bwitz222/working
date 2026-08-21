@@ -55,6 +55,5 @@ Universal hard stops (all routes): WACC ≤ g (TV denominator ≤ 0), scenario w
 
 - **Upstream:** if building an investment thesis or auditing earnings quality first, run `equity-research-foundation` before valuing.
 - **Downstream:** feed outputs into `equity-risk-report` (HTML dashboard) or `write` in DRAFT mode (IC memo). Every
-  delivered model carries a `Provenance` tab per `decision-provenance`. SMIF deliverables must apply `purdue-smif-brand-guidelines` + `purdue-smif-editorial-style`. Contested buy/sell calls → `llm-council`.
+  delivered model carries a `Provenance` tab per `decision-provenance`. SMIF deliverables must apply `purdue-smif-brand-guidelines` + `purdue-smif-editorial-style`.
 - **Real estate deals:** underwrite the property-level cash flows first; this skill handles the DCF/NAV mechanics.
-- On any failure or friction while using this skill, log it via `skill-improver`.

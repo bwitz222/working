@@ -1,0 +1,250 @@
+{
+  "lastUpdated": 1787279467539,
+  "skills": [
+    {
+      "skillId": "skill_017rgPoNPDNpdEAB79EtS2dB",
+      "name": "gate",
+      "description": "GATE v1, the de-slop pass, as a standalone entry point for SKILL-TO-SKILL dispatch only. Another skill finished a deliverable and needs the AI-writing-pattern pass run before it ships. Use when a skill asks for a de-slop, stop-slop, humanize, red-pen, or 24-pattern pass, or when a built docx, pptx, or xlsx needs its extracted text gated. Same contract the `write` skill runs, split out so a caller does not load a six-mode router to clean one deliverable. NOT for a person asking to clean, polish, tighten, humanize, or edit their own text, and not for drafting, critiquing, coaching, or compressing: those go to `write`.",
+      "source": "custom",
+      "updatedAt": "2026-08-18T05:33:00.537429Z"
+    },
+    {
+      "skillId": "skill_01ThoVj3tBs5v4uPtitGe3Jx",
+      "name": "smif-initiation-pipeline",
+      "description": "Superskill: end-to-end initiation-of-coverage pipeline for Purdue SMIF. Given a ticker, produces up to five deliverables: Full Foundation Brief (.md), Damodaran DCF Excel model, dark-mode HTML risk dashboard, SMIF-branded initiation report (.docx), and a run log. Routes on depth (quick take / standard / full), checkpoint style (one-shot / gated), and challenge mode (red-team the thesis and the user's prior, or stay neutral). Trigger on: \"initiate coverage on [TICKER]\", \"SMIF full run [TICKER]\", \"run the initiation pipeline\", \"one-shot initiation\", \"quick initiation take on [TICKER]\", or any request for a SMIF initiation package on a single public equity. Never run any stage of this workflow ad hoc when this skill is installed — route through it.",
+      "source": "custom",
+      "updatedAt": "2026-08-18T04:46:45.922959Z"
+    },
+    {
+      "skillId": "skill_01PwrXgqmVGLSiYPvoyeotRs",
+      "name": "cover-letter-pro",
+      "description": "Write a tailored, human-sounding cover letter for any job application. Always invoke this skill when Ian asks to write, draft, create, improve, or fix a cover letter, application letter, or letter of interest — even if he just says \"write me a cover letter for X\", \"I'm applying to Y\", pastes a job posting, or says \"improve this draft.\" This skill researches the company, maps Ian's background to the role, drafts a punchy letter free of AI writing patterns, runs the GATE v1 de-slop pass, and delivers a polished final output. Trigger on: \"cover letter\", \"application letter\", \"write me something for this job\", \"I'm applying to\", \"help me apply\", \"fix my cover letter\", \"improve this draft\", or any time a job posting or company+role is mentioned alongside a request to write, apply, or improve.",
+      "source": "custom",
+      "updatedAt": "2026-08-17T16:10:51.212127Z"
+    },
+    {
+      "skillId": "skill_01T3x5fUgdhWUuvcFwFAPA4j",
+      "name": "purdue-smif-brand-guidelines",
+      "description": "Apply Purdue Student Managed Investment Fund (SMIF) brand guidelines — colors, typography, logo usage, imagery, voice. Use whenever creating any .docx, .pptx, .xlsx, or .html file, regardless of topic or whether SMIF is named. Also for any chart, infographic, PDF, email, or visual asset for SMIF.",
+      "source": "custom",
+      "updatedAt": "2026-08-18T04:47:50.014967Z"
+    },
+    {
+      "skillId": "skill_01BtutrZBqxgG6xL1NxeTG6y",
+      "name": "purdue-smif-editorial-style",
+      "description": "Apply Purdue Student Managed Investment Fund (SMIF) editorial style — capitalization, number formatting, financial metrics, abbreviations, hyphenation, period terminology, and voice — to all copy in downloadable deliverables. Use whenever generating or editing any .docx, .pptx, .xlsx, .html, .pdf, .md, or other file the user can download or save, regardless of topic or whether SMIF is named. Triggers include investment memos, pitch decks, portfolio commentary, semester and annual reports, committee materials, research briefs, dashboards, and internal communications. Sister skill to purdue-smif-brand-guidelines (which covers visual brand). Honor opt-outs only when the user is explicit (\"ignore style guide,\" \"unedited,\" \"raw text\").",
+      "source": "custom",
+      "updatedAt": "2026-08-18T04:47:45.869424Z"
+    },
+    {
+      "skillId": "skill_01VQhayVabJ96vbshetA3p6w",
+      "name": "decision-provenance",
+      "description": "Attribution, data-sourcing, and call-tracking layer for every analytical deliverable. Answers three questions no other skill owns: where did this number come from, who decided it (model vs. human), and was the call right. Use whenever a deliverable contains figures a client, IC, committee, auditor, or compliance reviewer could question; whenever routing a data pull across vendors; and whenever logging or grading an investment call. Triggers on: \"provenance\", \"where did this number come from\", \"audit trail\", \"who decided this\", \"attribution block\", \"which data source\", \"vendor fallback\", \"reconcile sources\", \"log this call\", \"grade my calls\", \"was my thesis right\", \"track record\", \"hit rate\", \"compliance review this\". Mandatory appendix layer for smif-initiation-pipeline, dcf, equity-risk-report, and any client-facing wealth-management deliverable.",
+      "source": "custom",
+      "updatedAt": "2026-08-17T01:40:28.881686Z"
+    },
+    {
+      "skillId": "morning",
+      "name": "morning",
+      "description": "Render the user's morning brief as a styled HTML artifact, or set it up as a recurring weekday task. Use only when the user explicitly asks to run, see, or set up their morning brief, or if they invoke /morning by name. A question about their day, schedule, or calendar is not by itself a request for the brief; answer it directly instead.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.628595Z"
+    },
+    {
+      "skillId": "skill_01PFHK9wfJBPDaFFz48xJBax",
+      "name": "resume-optimizer",
+      "description": "HR-veteran + AI-guru resume optimizer. Use this skill whenever a user wants to improve, rewrite, tailor, audit, or build a resume from scratch — including \"make my resume ATS-friendly\", \"help me apply to this job\", \"optimize my CV\", \"why am I not getting interviews\", \"check my resume against this job posting\", \"clean up my resume\", \"make my resume sound less AI\", \"write a resume for me\", or any variant. Covers full ATS scoring, keyword gap analysis, a GATE v1 de-slop pass, section-by-section co-authoring, and output in the user's chosen format. Always trigger this skill when a resume, CV, job application, or LinkedIn profile optimization is involved.",
+      "source": "custom",
+      "updatedAt": "2026-08-17T16:10:47.695459Z"
+    },
+    {
+      "skillId": "skill_01K7AiMLH3XLFQ2dRCuD2Bhh",
+      "name": "dcf",
+      "description": "Institutional-grade DCF valuation, all formats. THE single entry point for any discounted cash flow work: Excel model builds (Damodaran-style, audit-ready), 1-page valuation memos, and slide-ready analyses, for both single-entity and Sum-of-the-Parts (SOTP) structures across IB, Equity Research, Asset Management, and Real Estate. Always use this skill whenever the user asks to: build/run/update a DCF, derive a price target, compute intrinsic value, build a WACC, model terminal value, create sensitivity tables, run bull/base/bear scenarios, produce an equity bridge, value a company via discounted cash flows, or do an initiation/PT revision valuation section. Also triggers on: FCFF model, SOTP, sum of the parts, segment valuation, conglomerate discount, stub value, break-up analysis, spin-off valuation, NAV model, AFFO, cap rate DCF, levered IRR, distress scenario, consensus tension, or any financial valuation deliverable in Excel or memo form. Never build a DCF from scratch without this skill.",
+      "source": "custom",
+      "updatedAt": "2026-08-17T16:11:06.852262Z"
+    },
+    {
+      "skillId": "skill_01Lq14eLi1cbt2ejiqfAGGWD",
+      "name": "equity-risk-report",
+      "description": "Generates a comprehensive, single-file HTML5 dark-mode equity risk report for any publicly traded stock ticker. Use this skill whenever the user asks to analyze a stock, research a company's financials, build a risk dashboard, generate an equity report, assess investment risk for a ticker, or requests any combination of financial analysis + HTML output. Trigger even for casual phrasings like \"run a report on AAPL\", \"what does MSFT look like financially\", \"build me a risk card for NVDA\", or \"analyze Tesla for me\". The skill always performs live web research before writing any HTML — it never uses stale training data for financial figures. Always use this skill when a ticker symbol appears alongside any request for analysis, scoring, a dashboard, a report, or financial data visualization.",
+      "source": "custom",
+      "updatedAt": "2026-08-18T04:46:41.406846Z"
+    },
+    {
+      "skillId": "skill_01DLtPF8bdTHym9qzZr9GdDi",
+      "name": "llm-council",
+      "description": "5-advisor decision council: independent analysis, anonymous peer review, chairman synthesis. Trigger on: \"council this\", \"run the council\", \"war room this\", \"pressure-test this\", \"stress-test this\", \"debate this\", \"should I X or Y\", \"I can't decide\", \"I'm torn between\", \"validate this\", \"is this the right move\". Gate: two reasonable people must be able to defend opposite conclusions. Skip for factual lookups, creation tasks, trivial preferences, emotional distress.",
+      "source": "custom",
+      "updatedAt": "2026-06-27T23:58:18.369330Z"
+    },
+    {
+      "skillId": "skill_01YGTY3FbZW9LQN7BqWtRmMy",
+      "name": "finance-educator",
+      "description": "Master teaching skill for finance educators. Use whenever preparing to teach a finance class, building a lecture slide deck, creating lesson plans, designing student activities, or explaining any financial concept to students at any level. Triggers on: \"prepare my lecture\", \"build slides for class\", \"I'm teaching [topic] tomorrow\", \"explain [concept] to students\", \"create a session on [topic]\", \"make a deck for my class\", \"teaching materials for [topic]\", or any request involving educational content for finance courses. Always invoke this skill for ANY teaching task — never build lecture content, slides, or lesson plans without it.",
+      "source": "custom",
+      "updatedAt": "2026-08-18T04:46:36.900878Z"
+    },
+    {
+      "skillId": "skill_01HSTxVcYjjcsCyfqqQf7fn7",
+      "name": "write",
+      "description": "Drafts, critiques, coaches, compresses, and de-slops any substantial writing. Six modes. DRAFT co-writes memos, investor letters, IC and board materials, client emails and quarterly letters, lecture notes, essays, op-eds, cover letters, prose. CRITIQUE tears a draft apart: ranked issues, counterargument stress-test, scorecard, rewrite. COACH diagnoses a student's or colleague's draft without rewriting it. CLEAN strips AI writing patterns. COMPRESS cuts to a target length and reports what was lost. GATE is the de-slop pass other skills invoke, including any asking for a stop-slop, humanize, or red-pen pass. Triggers: \"write a...\", \"draft a...\", \"co-write\", \"ghostwrite\", \"critique this\", \"tear this apart\", \"red-team my argument\", \"make this stronger\", \"give them feedback\", \"how would you grade this\", \"humanize this\", \"de-slop\", \"clean this up\", \"edit my writing\", \"cut this to 400 words\", \"make it one page\". Not for code or one-line answers.",
+      "source": "custom",
+      "updatedAt": "2026-08-18T05:32:28.618105Z"
+    },
+    {
+      "skillId": "skill_01QV9d3UMX9EvFJwsHHe7TqM",
+      "name": "equity-research-foundation",
+      "description": "Academic and practitioner reasoning layer for equity research. Encodes 30+ foundational finance papers (Fama-French, Sloan, Kahneman-Tversky, Jensen, Tunneling, Jegadeesh-Titman, and more) as active analytical frameworks, not passive references. Use whenever building an investment thesis, auditing earnings quality, scanning for behavioral mispricing, assessing management or governance, diagnosing factor exposures, stress-testing a valuation, or initiating coverage. Triggers on: \"earnings quality\", \"are these earnings real\", \"high accruals\", \"behavioral bias\", \"is the market wrong\", \"consensus too high\", \"contrarian\", \"momentum\", \"assess management\", \"promoter-led\", \"governance red flags\", \"tunneling\", \"capital allocation\", \"factor exposure\", \"value vs growth\", \"sanity check this DCF\", \"research foundation\", \"initiate coverage\", \"build a thesis\", \"why is this mispriced\", or any underlying paper by name. Front-runs the equity-risk-report and DCF skills by activating the right academic model first.",
+      "source": "custom",
+      "updatedAt": "2026-08-17T16:11:11.598820Z"
+    },
+    {
+      "skillId": "skill_01HxUrJNE9y3a2uotDbrtqZW",
+      "name": "purdue-smif-design",
+      "description": "Use this skill to generate well-branded dashboards, screens, and assets for the Purdue Student Managed Investment Fund (SMIF), for production code or throwaway prototypes/mocks. Contains two token-scoped, production-hardened design systems — Bell Tower (light, serif, institutional research) and Vault (dark, mono, trading desk) — sharing one Purdue palette and one React component library (17 primitives with real hover/focus/keyboard states). Trigger whenever the user asks for a SMIF dashboard, holdings/positions screen, IC memo layout, portfolio UI, or any interface that should carry Purdue SMIF branding, even if they don't name the design system directly.",
+      "source": "custom",
+      "updatedAt": "2026-08-09T07:25:12.711410Z"
+    },
+    {
+      "skillId": "skill_01Nv7jBWERNzB5AXBrv7Rzqq",
+      "name": "redesign-existing-projects",
+      "description": "Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS.",
+      "source": "custom",
+      "updatedAt": "2026-06-10T01:23:17.272585Z"
+    },
+    {
+      "skillId": "skill_01AMU97psXkTEeB4ZJjXsFkL",
+      "name": "cmo-advisor",
+      "description": "Chief Marketing Officer strategic advisor. Use when working on brand positioning, growth model design, marketing budget allocation, channel mix strategy, or marketing org design. Covers CAC/LTV, pipeline math, PLG vs SLG model selection, and ICP definition.",
+      "source": "custom",
+      "updatedAt": "2026-05-26T14:30:06.569286Z"
+    },
+    {
+      "skillId": "skill_012BjXbYY3wiTeugbWTSXa6R",
+      "name": "ceo-advisor",
+      "description": "Chief Executive Officer strategic advisor. Use when working on company vision, fundraising strategy, board management, culture design, stakeholder alignment, or capital allocation. Covers planning cycles, OKR frameworks, investor relations, and CEO-level diagnostic questions.",
+      "source": "custom",
+      "updatedAt": "2026-05-26T14:29:44.295687Z"
+    },
+    {
+      "skillId": "learn",
+      "name": "learn",
+      "description": "Use this skill when the user wants intellectual understanding — learning how or why something works, not getting a task done or soliciting Claude's judgment.\n\nTrigger for:\n- Explicit learning requests: teach, explain, ELI5, walk me through, quiz me, flashcards, \"I'm rusty on\"; definitions (\"what is X\")\n- Terse concept names implying \"help me understand this\": \"Galois theory,\" \"transformers, from scratch\"\n- Confusion signals: \"won't stick,\" \"keep mixing these up,\" \"not getting it\"\n- Learning-path questions: prerequisites, sequencing, what to study before X\n- Conceptual questions about mechanisms, causes, or dynamics\n\nDon't trigger for:\n- Tasks: coding, writing, calculation, translation, factual lookup, news updates\n- Personal troubleshooting; resource/textbook recommendations\n- Claude's evaluative verdict: opinion prompts (\"do you think X\", \"settle this\", \"honest take\", \"is X dead / still taken seriously\") and interpretive takes (\"was X really as harsh as people say\")\n",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.375866Z"
+    },
+    {
+      "skillId": "theme-factory",
+      "name": "theme-factory",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.364919Z"
+    },
+    {
+      "skillId": "skill_01Ws5ah9nZQX1xFP5zcYthnw",
+      "name": "coo-advisor",
+      "description": "Chief Operating Officer strategic advisor. Use when working on strategy execution, OKR design and cascading, process design, operational cadence, or scaling playbooks. Covers Theory of Constraints, RACI frameworks, bottleneck analysis, and stage-specific scaling breakpoints.",
+      "source": "custom",
+      "updatedAt": "2026-05-26T14:29:55.699283Z"
+    },
+    {
+      "skillId": "skill_01Y8KTT4oL3KW89EUSL5VvRQ",
+      "name": "cfo-advisor",
+      "description": "Chief Financial Officer strategic advisor. Use when working on financial modeling, unit economics, burn rate and runway analysis, fundraising strategy, board financial packages, or cash management. Covers LTV/CAC, burn multiple, NDR, scenario planning, and decision triggers.",
+      "source": "custom",
+      "updatedAt": "2026-05-26T14:29:53.375073Z"
+    },
+    {
+      "skillId": "web-artifacts-builder",
+      "name": "web-artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.265269Z"
+    },
+    {
+      "skillId": "skill_01Ho6SJG86rxHNrhct1ZE8Tq",
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "source": "custom",
+      "updatedAt": "2026-05-21T17:29:56.552481Z"
+    },
+    {
+      "skillId": "skill_01HuLcgWzA3SiGv95rxXjQBw",
+      "name": "adobe-acrobat-pro",
+      "description": "Full-featured PDF suite replicating Adobe Acrobat Pro, including a LIVE BROWSER-BASED PDF EDITOR (highlight, text, shapes, freehand draw, erase, multi-page, zoom, download with annotations baked in — launch it with show_widget using assets/live-editor.html). Also covers: PDF creation, merge/split/rotate/reorder pages, text and image overlays, annotations, redaction, digital signatures, password protection, OCR on scanned documents, PDF comparison (visual diff), compression/optimization, format conversion (PDF to Word, Excel, images; HTML to PDF), Bates numbering, bookmarks/TOC, headers/footers, PDF/A compliance, and batch processing. Trigger on ANY of: editing a PDF live, annotating, redacting, signing, compressing, comparing, converting to/from PDF, stamping, page numbers, bookmarks, or accessibility. Always prefer over the basic pdf or pdf-reading skills for modification, annotation, conversion, or any interactive PDF editing request.",
+      "source": "custom",
+      "updatedAt": "2026-05-28T19:03:28.955475Z"
+    },
+    {
+      "skillId": "mcp-builder",
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.316092Z"
+    },
+    {
+      "skillId": "skill_019xxwoaSrF8nK17CMp573ZH",
+      "name": "skill-improver",
+      "description": "Meta-skill that watches how skills perform during real work, logs concrete improvement opportunities to a central log, and proposes changes in batch during a scheduled weekly review. Trigger this skill whenever the user gives feedback that a skill missed, misfired, or could have done better (\"that didn't work\", \"you should have used X\", \"why didn't you...\", \"the docx skill kept doing Y\"); when a skill is invoked but the result is poor; when a task pattern recurs that has no matching skill; when wrapping up a work session and there's anything worth remembering; or when a scheduled \"weekly skill review\" runs. Also use it when the user asks to \"log an improvement\", \"remember this for next time\", \"improve my skills\", \"review my skills\", or sets up the auto-improvement system for the first time. Improvements to the skill-improver itself go in the same log — it watches itself too.",
+      "source": "custom",
+      "updatedAt": "2026-05-26T04:28:42.847103Z"
+    },
+    {
+      "skillId": "algorithmic-art",
+      "name": "algorithmic-art",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.238792Z"
+    },
+    {
+      "skillId": "internal-comms",
+      "name": "internal-comms",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.305914Z"
+    },
+    {
+      "skillId": "pdf",
+      "name": "pdf",
+      "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-07-10T19:23:15.432550Z"
+    },
+    {
+      "skillId": "canvas-design",
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.296985Z"
+    },
+    {
+      "skillId": "skill-creator",
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "source": "anthropic-example",
+      "updatedAt": "2026-08-14T00:06:41.225431Z"
+    },
+    {
+      "skillId": "pptx",
+      "name": "pptx",
+      "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-03T21:01:25.771949Z"
+    },
+    {
+      "skillId": "xlsx",
+      "name": "xlsx",
+      "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-03T21:01:25.792740Z"
+    },
+    {
+      "skillId": "docx",
+      "name": "docx",
+      "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "source": "anthropic",
+      "updatedAt": "2026-08-03T21:01:25.747439Z"
+    }
+  ]
+}

@@ -91,4 +91,6 @@ seven-dimension critique scorecard, which runs out of 70 and judges argument rat
 
 ## Verification before release
 
-Confirm two things every time: no fabrication was introduced, and no figure or proper noun was altered. If either fails, the pass is not done.
+Confirm three things every time: no fabrication was introduced, no figure or proper noun was altered, and the output is free of invisible or lookalike characters. If any fails, the pass is not done.
+
+**Character hygiene.** Scan the prose for zero-width characters (U+200B, U+200C, U+200D, U+2060, U+FEFF), typographic spaces standing in for a plain space between words (U+2000 to U+200A, U+202F, U+205F), and stray soft hyphens (U+00AD). Replace each with a plain space or delete it. These come from pasted PDFs, web copy, and AI tools, and some tools insert them on purpose to scramble AI detectors. In a shipped file they break search, copy-paste into Excel or a terminal, screen readers, and compliance archiving, and current detectors and plagiarism checkers flag them as tampering. Leave a non-breaking space (U+00A0) where it holds a number to its unit or a title to a name, and leave quoted spans, code, and tables untouched. Name the count in the change line: "removed 212 hidden Unicode spaces." Never insert one.

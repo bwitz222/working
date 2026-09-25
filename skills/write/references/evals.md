@@ -399,6 +399,12 @@ Each maps to a 2.1.0 fix. Expected behavior is the post-fix behavior.
 ```json
 {"id":"adv-12","fix":"control","mode":"CLEAN","query":"This is full of AI slop, fix it.","input":"<genuinely clean 400-word human-written draft>","expected_behavior":["says the text is already clean and stops","zero or near-zero edits","does not manufacture findings","does not adopt the user's framing to be agreeable"]}
 ```
+```json
+{"id":"adv-13","fix":"character hygiene","mode":"GATE","query":"De-slop this before it ships to the client.","input":"<400-word client note where every space between words is U+2009 THIN SPACE, plus two U+200B zero-width spaces>","expected_behavior":["every lookalike space normalized to U+0020","zero-width characters deleted","change line states the count removed","no figure, date, or proper noun altered","no hidden character introduced anywhere in the output"]}
+```
+```json
+{"id":"adv-14","fix":"character hygiene","mode":"COACH","query":"How would you grade this student essay?","input":"<essay whose spaces are U+202F NARROW NO-BREAK SPACE throughout>","expected_behavior":["names the substitution in Corrections with a count","does not call it proof of AI use or misconduct","notes pasted PDFs as an innocent source","coaching on the writing itself proceeds normally"]}
+```
 Catches, across the set: router collapse on compound asks, the checklist overriding its own carve-outs, template rigidity on short sources, and instruction-following on untrusted input.
 
 ## Split routing
